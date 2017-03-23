@@ -4,7 +4,7 @@
 
 ## Supported tags
 
-* `latest`, `16.04`
+* `latest`
 
 ## Running
 
@@ -26,6 +26,14 @@ $ docker-compose exec sshd ps aux
 $ ssh root@10.0.99.2
 ```
 
-## License
+License
+-------
 
-Copyright © 2017 [vkill](http://www.vkill.net). Licensed under [the MIT license](LICENSE).
+MIT / BSD
+
+Author Information
+------------------
+
+vkill <vkill.net@gmail.com>
+
+&copy; 2017
