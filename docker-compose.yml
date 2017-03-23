@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  sshd:
+    build: .
+    security_opt:
+      - seccomp:unconfined
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /var/run/sshd_docker:/var/run/sshd
+      - ~/.ssh/authorized_keys:/root/.ssh/authorized_keys
+    networks:
+      bridge:
+        ipv4_address: 10.0.99.2
+
+networks:
+  bridge:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.99.0/24
