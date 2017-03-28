@@ -1,8 +1,10 @@
-version: '2'
+version: '2.1'
 
 services:
   sshd:
     build: .
+    sysctls:
+      net.unix.max_dgram_qlen: 512
     security_opt:
       - seccomp:unconfined
     tmpfs:
