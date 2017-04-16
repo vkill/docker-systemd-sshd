@@ -4,6 +4,8 @@ MAINTAINER vkill <vkill.net@gmail.com>
 
 EXPOSE 22
 
+#RUN sed -i "s!http://archive.ubuntu.com/ubuntu!http://mirrors.163.com/ubuntu!g" /etc/apt/sources.list
+
 RUN apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -y \
         openssh-server \
